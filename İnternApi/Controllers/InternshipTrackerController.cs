@@ -108,7 +108,7 @@ namespace İnternApi.Controllers
 
             return Ok("Success");
         }
-        [Authorize]
+       
         //Veriyi güncelleme işlemi
         [HttpPut("UpdateUser")]
         public IActionResult UpdateUser(int id,string email,string password,string address,string phoneNumber)

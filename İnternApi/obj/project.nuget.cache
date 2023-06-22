@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FgXDdiLFJC2vMusxmHPp9f6jDHyYMdK0LFYLSuErmddyZv4kY9nmOA3F3162NBaYZ9PBASopGvCF/qdiL12UTQ==",
+  "dgSpecHash": "PcGUIeubrjIZvWAebaf9sR/5ju3WouHzPcTFSLBlw8OEtf06DLSwxXBWN40LQUIcZL8TjjYP2dmFBsrdkaJCeA==",
   "success": true,
-  "projectFilePath": "/Users/yarkinata/Projects/İnternApi/İnternApi/İnternApi.csproj",
+  "projectFilePath": "/Users/yarkinata/Projects/Intern-tracking-api/İnternApi/İnternApi.csproj",
   "expectedPackageFiles": [
     "/Users/yarkinata/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/yarkinata/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

@@ -75,7 +75,7 @@ namespace İnternApi.Controllers
         }
         //Task Ekleme İşlemi
         [HttpPost("CreateTask")]
-        public IActionResult CreateTask(string taskName, string sender, string details)
+        public IActionResult CreateTask(string taskName, string sender, string details,DateTime endDate)
         {
             Tasks task = new Tasks();
             task.TaskName = taskName;
@@ -83,7 +83,7 @@ namespace İnternApi.Controllers
             task.TaskDetails = details;
             task.UserID = 0;
             task.TaskStartTime = DateTime.Now.Date;
-            task.TaskEndTime = DateTime.Now.Date.AddDays(2);
+            task.TaskEndTime =endDate.Date;
             task.IsCompleted = false;
             _applicationDBContext.tasks.Add(task);
             _applicationDBContext.SaveChanges();
@@ -110,19 +110,7 @@ namespace İnternApi.Controllers
             _applicationDBContext.SaveChanges();
             return "User Deleted";
         }
-        /* 
-      
 
-      //Task Ekleme İşlemi
-      [HttpPost("CreateTask")]
-      public IActionResult CreateTask(Tasks task)
-      {
-          applicationDBContext.tasks.Add(task);
-          applicationDBContext.SaveChanges();
-          return CreatedAtAction(nameof(GetAllTasks), new { id = task.TaskId }, task);
-      }
-      
-     */
     }
 }
 
