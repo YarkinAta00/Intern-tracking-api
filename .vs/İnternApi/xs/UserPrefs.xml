@@ -1,24 +1,21 @@
 ﻿<Properties StartupConfiguration="{BF28C03D-7B2F-45A9-A52C-9BB101EEDDBA}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.İnternApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="İnternApi/Controllers/TaskController.cs">
     <Files>
-      <File FileName="İnternApi/Controllers/InternshipTrackerController.cs" Line="187" Column="48" />
-      <File FileName="İnternApi/Model/Tasks.cs" Line="22" Column="1" />
+      <File FileName="İnternApi/Controllers/InternshipTrackerController.cs" />
+      <File FileName="İnternApi/Model/Tasks.cs" />
       <File FileName="İnternApi/Controllers/TaskController.cs" Line="86" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="İnternApi" expanded="True">
-            <Node name="İnternApi">
-              <Node name="Controllers" expanded="True">
-                <Node name="TaskController.cs" selected="True" />
-              </Node>
+          <Node name="İnternApi">
+            <Node name="İnternApi" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Model" expanded="True" />
             </Node>
           </Node>
@@ -26,5 +23,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>
