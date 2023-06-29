@@ -11,7 +11,8 @@ namespace İnternApi.Model
         public String TaskName { get; set; }
         public String TaskDetails { get; set; }
         public bool IsCompleted { get; set; }
-		public String TaskSender { get; set; }
+        public bool CheckProgres { get; set; }
+        public String TaskSender { get; set; }
         public DateTime TaskStartTime { get; set; }
         public DateTime TaskEndTime { get; set; }
 

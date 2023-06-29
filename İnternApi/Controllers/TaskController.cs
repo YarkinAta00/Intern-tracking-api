@@ -36,7 +36,7 @@ namespace İnternApi.Controllers
         }
     //ID'si Verilen Taskı Gösterme İşlemi
     [HttpGet("GetTaskByID")]
-   public IActionResult GetTaskByID(int id)
+    public IActionResult GetTaskByID(int id)
      {
          var task = _applicationDBContext.tasks.Where(x => x.TaskId == id).FirstOrDefault();
          if (task == null)
@@ -45,9 +45,20 @@ namespace İnternApi.Controllers
         }
             return Ok(task);
         }
-   //Adı Verilen Taskı Gösterme İşlemi
- [HttpGet("GetTaskByName")]
- public IActionResult GetTaskByName(string taskName)
+
+        [HttpGet("GetTaskProgress")]
+        public IActionResult GetTaskProgress()
+        {
+            var task = _applicationDBContext.tasks.Where(x => x.CheckProgres == true).FirstOrDefault();
+            if (task == null)
+            {
+                return NotFound();
+            }
+            return Ok(task);
+        }
+        //Adı Verilen Taskı Gösterme İşlemi
+        [HttpGet("GetTaskByName")]
+        public IActionResult GetTaskByName(string taskName)
         {
             var task = _applicationDBContext.tasks.Where(x => x.TaskName == taskName).FirstOrDefault();
             if (task == null)
@@ -56,14 +67,14 @@ namespace İnternApi.Controllers
             }
             return Ok(task);
         }
-        //Adı Verilen Taskı Gösterme İşlemi
-      [HttpPut("UpdateTask")]
+
+         [HttpPut("UpdateTask")]
         public string UpdateTaskByID(int id, string taskName, string sender, string details,DateTime startDate, DateTime endDate)
         {
             var task = _applicationDBContext.tasks.Where(x => x.TaskId == id).FirstOrDefault();
             if (task == null)
             {
-                return "task Not Found!";
+                return "Task Not Found!";
             }
             task.TaskName = taskName;
             task.TaskSender = sender;
@@ -73,6 +84,7 @@ namespace İnternApi.Controllers
             _applicationDBContext.SaveChanges();
             return "Task Updated";
         }
+
         //Task Ekleme İşlemi
         [HttpPost("CreateTask")]
         public IActionResult CreateTask(string taskName, string sender, string details,DateTime endDate)
@@ -85,6 +97,7 @@ namespace İnternApi.Controllers
             task.TaskStartTime = DateTime.Now.Date;
             task.TaskEndTime =endDate.Date;
             task.IsCompleted = false;
+            task.CheckProgres = false;
             _applicationDBContext.tasks.Add(task);
             _applicationDBContext.SaveChanges();
             return CreatedAtAction(nameof(GetTasks), new { id = task.TaskId }, task);
@@ -96,8 +109,9 @@ namespace İnternApi.Controllers
             var task = _applicationDBContext.tasks.Where(x => x.TaskId == id).FirstOrDefault();
             _applicationDBContext.tasks.Remove(task);
             _applicationDBContext.SaveChanges();
-            return "User Deleted";
+            return "Task Deleted";
         }
+
         [HttpPut("CompleteTask")]
         public string CompleteTask(int id)
         {
@@ -108,7 +122,20 @@ namespace İnternApi.Controllers
             }
             task.IsCompleted = true;
             _applicationDBContext.SaveChanges();
-            return "User Deleted";
+            return "Task Deleted";
+        }
+
+        [HttpPut("ChangeTaskProgres")]
+        public string changeTaskProgres(int id)
+        {
+            var task = _applicationDBContext.tasks.Where(x => x.TaskId == id).FirstOrDefault();
+            if (task == null)
+            {
+                return "task Not Found!";
+            }
+            task.CheckProgres = true;
+            _applicationDBContext.SaveChanges();
+            return "Task progress changed";
         }
 
     }

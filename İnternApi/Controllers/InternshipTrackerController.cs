@@ -145,8 +145,8 @@ namespace İnternApi.Controllers
             return Ok(myToken);
         }
 
-        
-        
+
+        [ApiExplorerSettings(IgnoreApi = true)]
         public string CreateToken(User user)
         {
             var Claims = new[]
@@ -183,8 +183,8 @@ namespace İnternApi.Controllers
 
             return Ok(new { userName, userSurname, userEmail });
         }
-        
-        
+
+        [ApiExplorerSettings(IgnoreApi = true)]
         public bool ValidateToken(string token)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signinKey));
